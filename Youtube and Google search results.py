@@ -1,16 +1,22 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 import time
 LOG_ERROR = 2
 query = input("Enter your search term ")
-input = input("Would you like to search google or youtube? G/Y? ")
-browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+value = input("Would you like to search google or youtube? G/Y? ")
+choice = input("Would you like to use Edge or Chrome? E/G?").upper
 
+if choice == "G":
+    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+else:
+    browser = webdriver.ChromiumEdge(service=Service(EdgeChromiumDriverManager().install()))
 
 def googlesearch(query):
     browser.get('https://www.google.com/')
@@ -41,7 +47,9 @@ def ytsearch(query):
     for item in videotitles:
         print(item.text)
 
-if input.upper() == "G":
+if value.upper() == "G":
     googlesearch(query)
 else: 
     ytsearch(query)
+
+end = input("Type anything to exit")
