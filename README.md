@@ -2,7 +2,7 @@
   <br>
   <img src="https://www.selenium.dev/images/selenium_4_logo.png" width="200"></a>
   <br>
-  Youtube and Google search results
+  Installing selenium
   <br>
 </h1>
 
@@ -11,7 +11,7 @@
 </p>
 
 ## What is this?
-This is a Selenium based web scraper written in python. It allows for a user to search either Youtube or Google with either Edge or Chrome to recieve basic search results.
+The repository contains projects that utilise selenium for web automation.
 
 ## How to install selenium
 1. Firstly ensure that "PIP" is installed on your machine. Open command prompt and type "pip"
@@ -28,7 +28,7 @@ pip install -U selenium
 ```
 pip install webdriver-manager
 ```
-## How to use
+## Youtube and google search results
 1. Enter the search term.
 
 2. Choose whether to use Youtube or Google as the search method. This is done by typing "Y" or "G".
